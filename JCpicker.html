@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="JCpicker.css" />
+        <title>Joy-Con Color picker</title>
+        <link rel="icon" href="icon.png" />
+    </head>
+
+    <header>    
+        <h1>Joy-Con profile generator</h1>
+        <h2><a href="https://github.com/HamletDuFromage/JC-color-swapper">for JC Color Swapper</a></h2>
+        
+    </header>
+
+    <body>
+        <div class="JCdisplay">
+            <span class="dot btnL" id="DUP"></span>
+            <span class="dot btnL" id="DDOWN"></span>
+            <span class="dot btnL" id="DLEFT"></span>
+            <span class="dot btnL" id="DRIGHT"></span>
+
+            <span class="dot btnR" id="X"></span>
+            <span class="dot btnR" id="B"></span>
+            <span class="dot btnR" id="Y"></span>
+            <span class="dot btnR" id="A"></span>
+            
+            <img class="JC" src="transparentJC.png">
+            <p id ="bodyL">
+            <p id ="bodyR">
+            
+        </div>
+
+        <div class="titles">
+            <div class="title">Left Joy-Con</div>
+            <div class="title">Right Joy-Con</div>
+        </div>
+
+        <div class="JC">
+            <input id="ljc_color" autocomplete="off" class="jscolor {onFineChange:'update(this,&quot;bodyL&quot;)'}" value="82FF96">
+            <input id="rjc_color" autocomplete="off" class="jscolor {onFineChange:'update(this,&quot;bodyR&quot;)'}" value="96F5F5 ">
+        </div>
+        <div class="BTN">
+            <input id="dpad_color" autocomplete="off" class="jscolor {onFineChange:'updateClass(this,&quot;btnL&quot;)'}" value="0A1E0A">
+            <input id="buttons_color" autocomplete="off" class="jscolor {onFineChange:'updateClass(this,&quot;btnR&quot;)'}" value="0A1E28">
+        </div>
+
+        <script>
+            function update(jscolor, id) {
+                document.getElementById(id).style.backgroundColor = '#' + jscolor;
+            }
+
+            function updateClass(jscolor, className) {
+                var all = document.getElementsByClassName(className);
+                for (var i = 0; i < all.length; i++) {
+                    all[i].style.backgroundColor = '#' + jscolor;
+                }
+            }
+        </script>
+
+        <div class="ntdo_profiles">
+            <details>
+                <summary>Official Joy-Con color configuration</summary>
+                <table class="ntdo_table">
+                    <tbody>
+                        <tr>
+                            <th>Color Name</th>
+                            <th>Body HEX</th>
+                            <th>Button HEX
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>Gray / グレー</td>
+                            <td>#828282</td>
+                            <td>#0F0F0F
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Red / ネオンレッド</td>
+                            <td>#FF3C28</td>
+                            <td>#1E0A0A
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Blue / ネオンブルー</td>
+                            <td>#0AB9E6</td>
+                            <td>#001E1E
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Yellow / ネオンイエロー</td>
+                            <td>#E6FF00</td>
+                            <td>#142800
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Green / ネオングリーン</td>
+                            <td>#1EDC00</td>
+                            <td>#002800
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Pink / ネオンピンク</td>
+                            <td>#FF3278</td>
+                            <td>#28001E
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Red / レッド</td>
+                            <td>#E10F00</td>
+                            <td>#280A0A
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Blue / ブルー</td>
+                            <td>#4655F5</td>
+                            <td>#00000A
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Purple / ネオンパープル</td>
+                            <td>#B400E6</td>
+                            <td>#140014
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Neon Orange / ネオンオレンジ</td>
+                            <td>#FAA005</td>
+                            <td>#0F0A00
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pokemon Let's Go! Pikachu / ポケットモンスター Let's Go! ピカチュウ</td>
+                            <td>#FFDC00</td>
+                            <td>#322800
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pokemon Let's Go! Eevee / ポケットモンスター Let's Go! イーブイ</td>
+                            <td>#C88C32</td>
+                            <td>#281900
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Nintendo Labo Creators Contest Edition</td>
+                            <td>#D7AA73</td>
+                            <td>#1E1914
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Animal Crossing Special Edition Left Joy-Con</td>
+                            <td>#82FF96</td>
+                            <td>#0A1E0A
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Animal Crossing Special Edition Right Joy-Con</td>
+                            <td>#96F5F5</td>
+                            <td>#0A1E28
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </details>
+        </div>
+
+        <div>
+            <input type="text" id="profile_name" placeholder="Custom Profile Name">
+            <input type="button" id ="gen" value="Generate Profile"/>
+        </div>
+
+        <div>
+            <textarea id="json_output" placeholder="JSON Output"></textarea>
+        </div>
+        <div>
+            <input type="button" id ="dl" value="Download JSON"/>
+        </div>
+        
+
+        
+        <script src="jscolor.js"></script>
+        <script src="JCpicker.js"></script>
+    </body>
+
+    <footer>
+        <a href="https://github.com/HamletDuFromage">HamletDuFromage</a>
+    </footer>
+</html>

@@ -1,0 +1,148 @@
+html, body{
+      font-family: Sans-Serif;
+    }
+
+h1{
+    font-size: 1.5em;
+}
+h2{
+    font-size: 1em;
+}
+
+footer{
+    font-size: 0.6em;
+    position: absolute;
+    bottom: 0;
+    color: lightblue
+}
+
+.title{
+    display: table-cell;
+    text-align: center;
+    border: 1px solid grey;
+    width: 160px;
+}
+
+.jscolor{
+    width: 150px;
+}
+
+summary{
+    font-size: 0.8em;
+    width: 325px;
+    background-color: #EEEEEE
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid gray;
+    font-size: 0.8em;
+}
+
+.JCdisplay{
+    position: relative;
+}
+
+.JC{
+    position: relative;
+    z-index: 3;
+}
+
+#bodyL{
+    float: left;
+    position: absolute;
+    background-color: #82FF96;
+    top: 0px;
+    z-index: 1;
+    border: 0px;
+    width:161px; 
+    height:300px;
+}
+
+#bodyR{
+    position: absolute;
+    background-color:#96F5F5;
+    top: 0px;
+    left: 180px;
+    z-index: 2;
+    border: 0px;
+    width:161px; 
+    height:300px;
+}
+
+.dot{
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    z-index: 4;
+
+}
+
+.btnL{
+    background-color:#0A1E0A 
+
+}
+
+.btnR{
+    background-color:#0A1E28
+}
+
+
+#DUP{
+    position: absolute;
+    top: 146px;
+    left: 81px;
+}
+
+#DDOWN{
+    position: absolute;
+    top: 187px;
+    left: 81px;
+}
+
+#DLEFT{
+    position: absolute;
+    top: 166px;
+    left: 61px;
+}
+
+#DRIGHT{
+    position: absolute;
+    top: 166px;
+    left: 102px;
+}
+
+#X{
+    position: absolute;
+    top: 65px;
+    left: 245px;
+}
+
+#B{
+    position: absolute;
+    top: 107px;
+    left: 245px;
+}
+
+#Y{
+    position: absolute;
+    top: 86px;
+    left: 225px;
+}
+
+#A{
+    position: absolute;
+    top: 86px;
+    left: 266px;
+}
+
+#json_output{
+    height: 12em;
+    width: 27em;
+}
+
+
+
