@@ -3,6 +3,10 @@ html, body{
       overflow-x: hidden;
 }
 
+html{
+    width: 500px;
+}
+
 body{
     position: relative
 }
