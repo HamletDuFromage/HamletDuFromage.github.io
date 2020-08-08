@@ -11,6 +11,11 @@
             "version": "1.3.2",
             "update_link": "https://hamletdufromage.github.io/mass-reply/4chan_mass_reply-1.3.2-an+fx.xpi",
             "update_hash": "sha256:ddbef95ebe37cc77d5d913fee85610054c486a93f509a362af2c26fa268028ca"
+          },
+          {
+            "version": "1.3.3",
+            "update_link": "https://hamletdufromage.github.io/mass-reply/4chan_mass_reply-1.3.3-an+fx.xpi",
+            "update_hash": "sha256:689be1f61d877c3871289bd78294ca26f236cd3f35b0475461669dec64e9a705"
           }
         ]
       }
