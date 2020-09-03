@@ -47,3 +47,9 @@ div.content {
     max-width: 800px;
     margin: 0 auto;
  }
+
+ .imgContainer{
+    display: flex;
+    justify-content: center;
+}
+
