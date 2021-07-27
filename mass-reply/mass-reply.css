@@ -53,3 +53,8 @@ div.content {
     text-align: center;
 }
 
+button {
+    font-size: 100%;
+    color: blue;
+}
+
