@@ -15,7 +15,7 @@ function download(file){
 }
 
 document.getElementById("dl").onclick = function() { 
-    download("profiles.json"); 
+    download("jc_profiles.json"); 
 };
 
 document.getElementById("gen").onclick = function() { 
