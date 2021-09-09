@@ -1,6 +1,8 @@
-function download(file){
+var profiles = [];
+
+function download(file) {
     var obj = document.getElementById("json_output").value;
-    obj = obj.replace(/\n/g, "%0D%0A"); 
+    obj = obj.replace(/\n/g, "%0D%0A");
     var data = "text/json;charset=utf-8," + obj;
 
     var a = document.createElement('a');
@@ -11,32 +13,32 @@ function download(file){
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    
+
 }
 
-document.getElementById("dl").onclick = function() { 
-    download("jc_profiles.json"); 
+document.getElementById("dl").onclick = function () {
+    download("jc_profiles.json");
 };
 
-document.getElementById("gen").onclick = function() { 
+document.getElementById("rm").onclick = function () {
+    profiles.pop();
+    document.getElementById("json_output").value = JSON.stringify(profiles, null, 4);
+};
+
+document.getElementById("gen").onclick = function () {
     var name = document.getElementById("profile_name").value;
-    if(name === ""){
+    if (name === "") {
         name = "Custom Profile";
     }
     var profile = {
         "name": name,
-        "L_JC" : document.getElementById("ljc_color").value,
-        "L_BTN" : document.getElementById("dpad_color").value,
-        "R_JC" : document.getElementById("rjc_color").value,
-        "R_BTN" : document.getElementById("buttons_color").value
+        "L_JC": document.getElementById("ljc_color").value,
+        "L_BTN": document.getElementById("dpad_color").value,
+        "R_JC": document.getElementById("rjc_color").value,
+        "R_BTN": document.getElementById("buttons_color").value
     }
 
-    var data = JSON.stringify(profile, null, 4);
-    if(document.getElementById("json_output").value === ""){
-        document.getElementById("json_output").value += data;
-    }
-    else{
-        document.getElementById("json_output").value += ",\n\n" + data;
-    }
+    profiles.push(profile);
+    document.getElementById("json_output").value = JSON.stringify(profiles, null, 4);
 
 };
