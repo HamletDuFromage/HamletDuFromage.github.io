@@ -1,44 +1,45 @@
-html, body{
-      font-family: Sans-Serif;
-      overflow-x: hidden;
+html, body {
+    font-family: Sans-Serif;
+    overflow-x: hidden;
 }
 
-body{
+body {
     position: relative
 }
 
-h1{
+h1 {
     font-size: 1.5em;
 }
-h2{
+
+h2 {
     font-size: 1em;
 }
 
-footer{
+footer {
     font-size: 0.6em;
     position: absolute;
     bottom: 0;
     color: lightblue
 }
 
-.title{
+.title {
     display: table-cell;
     text-align: center;
     border: 1px solid grey;
     width: 160px;
 }
 
-.jscolor{
+.jscolor {
     width: 150px;
 }
 
-summary{
+summary {
     font-size: 0.8em;
     width: 325px;
     background-color: #EEEEEE
 }
 
-table{
+table {
     border-collapse: collapse;
 }
 
@@ -47,107 +48,109 @@ table, th, td {
     font-size: 0.8em;
 }
 
-.JCdisplay{
+tr:hover {
+    background-color: gainsboro;
+}
+
+th {
+    background-color: lightgray;
+}
+
+.JCdisplay {
     position: relative;
 }
 
-.JC{
+.JC {
     position: relative;
     z-index: 3;
 }
 
-#bodyL{
+#bodyL {
     float: left;
     position: absolute;
     background-color: #82FF96;
     top: 0px;
     z-index: 1;
     border: 0px;
-    width:161px; 
-    height:300px;
+    width: 161px;
+    height: 300px;
 }
 
-#bodyR{
+#bodyR {
     position: absolute;
-    background-color:#96F5F5;
+    background-color: #96F5F5;
     top: 0px;
     left: 180px;
     z-index: 2;
     border: 0px;
-    width:161px; 
-    height:300px;
+    width: 161px;
+    height: 300px;
 }
 
-.dot{
+.dot {
     height: 23px;
     width: 23px;
     border-radius: 50%;
     z-index: 4;
-
 }
 
-.btnL{
-    background-color:#0A1E0A 
-
+.btnL {
+    background-color: #0A1E0A
 }
 
-.btnR{
-    background-color:#0A1E28
+.btnR {
+    background-color: #0A1E28
 }
 
-
-#DUP{
+#DUP {
     position: absolute;
     top: 146px;
     left: 81px;
 }
 
-#DDOWN{
+#DDOWN {
     position: absolute;
     top: 187px;
     left: 81px;
 }
 
-#DLEFT{
+#DLEFT {
     position: absolute;
     top: 166px;
     left: 61px;
 }
 
-#DRIGHT{
+#DRIGHT {
     position: absolute;
     top: 166px;
     left: 102px;
 }
 
-#X{
+#X {
     position: absolute;
     top: 65px;
     left: 245px;
 }
 
-#B{
+#B {
     position: absolute;
     top: 107px;
     left: 245px;
 }
 
-#Y{
+#Y {
     position: absolute;
     top: 86px;
     left: 225px;
 }
 
-#A{
+#A {
     position: absolute;
     top: 86px;
     left: 266px;
 }
 
-#json_output{
+#json_output {
     height: 12em;
     width: 27em;
 }
-
-
-

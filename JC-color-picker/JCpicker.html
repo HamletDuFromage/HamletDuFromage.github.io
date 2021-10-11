@@ -1,187 +1,287 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./JCpicker.css" />
-        <title>Joy-Con Color picker</title>
-        <link rel="icon" href="./../icon.png"/>
-    </head>
 
-    <header>    
-        <h1>Joy-Con profile generator</h1>
-        <h2><a href="https://github.com/HamletDuFromage/JC-color-swapper">for JC Color Swapper</a></h2>
-        
-    </header>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./JCpicker.css" />
+    <title>Joy-Con Color picker</title>
+    <link rel="icon" href="./../icon.png" />
+</head>
 
-    <body>
-        <div class="JCdisplay">
-            <span class="dot btnL" id="DUP"></span>
-            <span class="dot btnL" id="DDOWN"></span>
-            <span class="dot btnL" id="DLEFT"></span>
-            <span class="dot btnL" id="DRIGHT"></span>
+<header>
+    <h1>Joy-Con profile generator</h1>
+    <h2><a href="https://github.com/HamletDuFromage/JC-color-swapper">for JC Color Swapper</a></h2>
 
-            <span class="dot btnR" id="X"></span>
-            <span class="dot btnR" id="B"></span>
-            <span class="dot btnR" id="Y"></span>
-            <span class="dot btnR" id="A"></span>
-            
-            <img class="JC" src="./transparentJC.png">
-            <p id ="bodyL">
-            <p id ="bodyR">
-            
-        </div>
+</header>
 
-        <div class="titles">
-            <div class="title">Left Joy-Con</div>
-            <div class="title">Right Joy-Con</div>
-        </div>
+<body>
+    <div class="JCdisplay">
+        <span class="dot btnL" id="DUP"></span>
+        <span class="dot btnL" id="DDOWN"></span>
+        <span class="dot btnL" id="DLEFT"></span>
+        <span class="dot btnL" id="DRIGHT"></span>
 
-        <div class="JC">
-            <input id="ljc_color" autocomplete="off" class="jscolor {onFineChange:'update(this,&quot;bodyL&quot;)'}" value="82FF96">
-            <input id="rjc_color" autocomplete="off" class="jscolor {onFineChange:'update(this,&quot;bodyR&quot;)'}" value="96F5F5 ">
-        </div>
-        <div class="BTN">
-            <input id="dpad_color" autocomplete="off" class="jscolor {onFineChange:'updateClass(this,&quot;btnL&quot;)'}" value="0A1E0A">
-            <input id="buttons_color" autocomplete="off" class="jscolor {onFineChange:'updateClass(this,&quot;btnR&quot;)'}" value="0A1E28">
-        </div>
+        <span class="dot btnR" id="X"></span>
+        <span class="dot btnR" id="B"></span>
+        <span class="dot btnR" id="Y"></span>
+        <span class="dot btnR" id="A"></span>
 
-        <script>
-            function update(jscolor, id) {
-                document.getElementById(id).style.backgroundColor = '#' + jscolor;
+        <img class="JC" src="./transparentJC.png">
+        <p id="bodyL">
+        <p id="bodyR">
+
+    </div>
+
+    <div class="titles">
+        <div class="title">Left Joy-Con</div>
+        <div class="title">Right Joy-Con</div>
+    </div>
+
+    <div class="JC">
+        <input id="ljc_color" autocomplete="off" class="jscolor {onFineChange:'update(this,&quot;bodyL&quot;)'}"
+            value="82FF96">
+        <input id="rjc_color" autocomplete="off" class="jscolor {onFineChange:'update(this,&quot;bodyR&quot;)'}"
+            value="96F5F5 ">
+    </div>
+    <div class="BTN">
+        <input id="dpad_color" autocomplete="off" class="jscolor {onFineChange:'updateClass(this,&quot;btnL&quot;)'}"
+            value="0A1E0A">
+        <input id="buttons_color" autocomplete="off" class="jscolor {onFineChange:'updateClass(this,&quot;btnR&quot;)'}"
+            value="0A1E28">
+    </div>
+
+    <script>
+        function update(jscolor, id) {
+            document.getElementById(id).style.backgroundColor = '#' + jscolor;
+        }
+
+        function updateClass(jscolor, className) {
+            var all = document.getElementsByClassName(className);
+            for (var i = 0; i < all.length; i++) {
+                all[i].style.backgroundColor = '#' + jscolor;
             }
+        }
+    </script>
 
-            function updateClass(jscolor, className) {
-                var all = document.getElementsByClassName(className);
-                for (var i = 0; i < all.length; i++) {
-                    all[i].style.backgroundColor = '#' + jscolor;
-                }
-            }
-        </script>
+    <div class="ntdo_profiles">
+        <details>
+            <summary>Official Joy-Con color configuration</summary>
+            <a href="https://switchbrew.org/w/index.php?title=Joy-Con&oldid=11231#Colors">Source: switchbrew.org</a>
+            <table class="wikitable">
+                <tbody>
+                    <tr>
+                        <th>Retail Color</th>
+                        <th>Body HEX</th>
+                        <th>Button HEX
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Black / ブラック</td>
+                        <td>#313131</td>
+                        <td>#0F0F0F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gray / グレー</td>
+                        <td>#828282</td>
+                        <td>#0F0F0F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Red / ネオンレッド</td>
+                        <td>#FF3C28</td>
+                        <td>#1E0A0A
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Blue / ネオンブルー</td>
+                        <td>#0AB9E6</td>
+                        <td>#001E1E
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Yellow / ネオンイエロー</td>
+                        <td>#E6FF00</td>
+                        <td>#142800
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Green / ネオングリーン</td>
+                        <td>#1EDC00</td>
+                        <td>#002800
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Pink / ネオンピンク</td>
+                        <td>#FF3278</td>
+                        <td>#28001E
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Red / レッド</td>
+                        <td>#E10F00</td>
+                        <td>#280A0A
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Blue / ブルー</td>
+                        <td>#4655F5</td>
+                        <td>#00000A
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Purple / ネオンパープル</td>
+                        <td>#B400E6</td>
+                        <td>#140014
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Neon Orange / ネオンオレンジ</td>
+                        <td>#FAA005</td>
+                        <td>#0F0A00
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>White / ホワイト</td>
+                        <td>#E6E6E6</td>
+                        <td>#323232
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Special Edition Color</th>
+                        <th>Body HEX</th>
+                        <th>Button HEX
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Super Smash Bros. Ultimate Edition Gray Joy-Con / 大乱闘スマッシュブラザーズ SPECIAL</td>
+                        <td>#828282</td>
+                        <td>#0F0F0F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pokemon: Let's Go! Eevee-Brown Left Joy-Con / ポケットモンスター Let's Go! イーブイ</td>
+                        <td>#C88C32</td>
+                        <td>#281900
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pokemon: Let's Go! Pikachu-Yellow Right Joy-Con / ポケットモンスター Let's Go! ピカチュウ</td>
+                        <td>#FFDC00</td>
+                        <td>#322800
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>*Nintendo Labo Creators Contest Edition "Cardboard"-Colored Joy-Con</td>
+                        <td>#D7AA73</td>
+                        <td>#1E1914
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>**Dragon Quest XI S Lotto Edition Royal-Blue Joy-Con / ドラゴン クエスト XI S （ロト版）</td>
+                        <td>#1473FA</td>
+                        <td>#00000F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>**Disney Tsum Tsum Festival Neon-Purple Left Joy-Con / ディズニー ツムツム フェスティバル</td>
+                        <td>#B400E6</td>
+                        <td>#140014
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>**Disney Tsum Tsum Festival Neon-Pink Right Joy-Con / ディズニー ツムツム フェスティバル</td>
+                        <td>#FF3278</td>
+                        <td>#28001E
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Animal Crossing: New Horizons Pastel-Green Left Joy-Con / あつまれ どうぶつの森</td>
+                        <td>#82FF96</td>
+                        <td>#0A1E0A
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Animal Crossing: New Horizons Pastel-Blue Right Joy-Con / あつまれ どうぶつの森</td>
+                        <td>#96F5F5</td>
+                        <td>#0A1E28
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fortnite Wildcat Edition Yellow Left Joy-Con</td>
+                        <td>#FFCC00</td>
+                        <td>#1A1100
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fortnite Wildcat Edition Dark-Blue Right Joy-Con</td>
+                        <td>#0084FF</td>
+                        <td>#000F1E
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mario Red &amp; Blue Edition Red Joy-Con / マリオ レッド × ブルー</td>
+                        <td>#F04614</td>
+                        <td>#1E1914
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Monster Hunter Rise Edition Gray Joy-Con / モンスターハンターライズ</td>
+                        <td>#828282</td>
+                        <td>#0F0F0F
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fortnite Fleet Force Edition Dark-Blue Left Joy-Con</td>
+                        <td>#0084FF</td>
+                        <td>#000F1E
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Fortnite Fleet Force Edition Yellow Right Joy-Con</td>
+                        <td>#FFCC00</td>
+                        <td>#1A1100
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Legend of Zelda: Skyward Sword Dark-Blue Left Joy-Con / ゼルダの伝説 スカイウォードソード</td>
+                        <td>#2D50F0</td>
+                        <td>#1E0F46
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Legend of Zelda: Skyward Sword Dark-Purple Right Joy-Con / ゼルダの伝説 スカイウォードソード</td>
+                        <td>#500FC8</td>
+                        <td>#00051E
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>// *(Prize Awarded for Labo Contest - No Retail) // **(Available Japan Only)
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </details>
+    </div>
 
-        <div class="ntdo_profiles">
-            <details>
-                <summary>Official Joy-Con color configuration</summary>
-                <table class="ntdo_table">
-                    <tbody>
-                        <tr>
-                            <th>Color Name</th>
-                            <th>Body HEX</th>
-                            <th>Button HEX
-                            </th>
-                        </tr>
-                        <tr>
-                            <td>Gray / グレー</td>
-                            <td>#828282</td>
-                            <td>#0F0F0F
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Red / ネオンレッド</td>
-                            <td>#FF3C28</td>
-                            <td>#1E0A0A
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Blue / ネオンブルー</td>
-                            <td>#0AB9E6</td>
-                            <td>#001E1E
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Yellow / ネオンイエロー</td>
-                            <td>#E6FF00</td>
-                            <td>#142800
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Green / ネオングリーン</td>
-                            <td>#1EDC00</td>
-                            <td>#002800
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Pink / ネオンピンク</td>
-                            <td>#FF3278</td>
-                            <td>#28001E
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Red / レッド</td>
-                            <td>#E10F00</td>
-                            <td>#280A0A
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Blue / ブルー</td>
-                            <td>#4655F5</td>
-                            <td>#00000A
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Purple / ネオンパープル</td>
-                            <td>#B400E6</td>
-                            <td>#140014
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Neon Orange / ネオンオレンジ</td>
-                            <td>#FAA005</td>
-                            <td>#0F0A00
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pokemon Let's Go! Pikachu / ポケットモンスター Let's Go! ピカチュウ</td>
-                            <td>#FFDC00</td>
-                            <td>#322800
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Pokemon Let's Go! Eevee / ポケットモンスター Let's Go! イーブイ</td>
-                            <td>#C88C32</td>
-                            <td>#281900
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Nintendo Labo Creators Contest Edition</td>
-                            <td>#D7AA73</td>
-                            <td>#1E1914
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Animal Crossing Special Edition Left Joy-Con</td>
-                            <td>#82FF96</td>
-                            <td>#0A1E0A
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Animal Crossing Special Edition Right Joy-Con</td>
-                            <td>#96F5F5</td>
-                            <td>#0A1E28
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </details>
-        </div>
+    <div>
+        <input type="text" id="profile_name" placeholder="Custom Profile Name">
+        <input type="button" id="gen" value="Generate Profile" />
+    </div>
 
-        <div>
-            <input type="text" id="profile_name" placeholder="Custom Profile Name">
-            <input type="button" id ="gen" value="Generate Profile"/>
-        </div>
+    <div>
+        <textarea id="json_output" placeholder="JSON Output"></textarea>
+    </div>
+    <div>
+        <input type="button" id="dl" value="Download JSON" />
+        <input type="button" id="rm" value="Remove last profile" />
+    </div>
 
-        <div>
-            <textarea id="json_output" placeholder="JSON Output"></textarea>
-        </div>
-        <div>
-            <input type="button" id ="dl" value="Download JSON"/>
-            <input type="button" id ="rm" value="Remove last profile"/>
-        </div>
-        
 
-        
-        <script src="./jscolor.js"></script>
-        <script src="./JCpicker.js"></script>
-    </body>
+
+    <script src="./jscolor.js"></script>
+    <script src="./JCpicker.js"></script>
+</body>
 
 </html>
