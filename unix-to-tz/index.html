@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./unix-to-tz.css" />
+    <title>Joy-Con Color picker</title>
+    <link rel="icon" href="./../icon.png" />
+</head>
+
+<body>
+    <h3 id="tz_field"></h3>
+    <h2 id="date_field"></h2>
+    <h1 id="time_field"></h1>
+
+
+    <script>
+        const url = new URL(window.location.toLocaleString()).searchParams;
+        const unix_timestamp = url.get("timestamp");
+        const date_obj = new Date(unix_timestamp * 1000);
+        const date_str = date_obj.toLocaleDateString([],
+            {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        const time_str = date_obj.toLocaleString([],
+            {
+                hour: '2-digit',
+                minute: '2-digit',
+                hourCycle: 'h24'
+            });
+        const tz_str = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        document.getElementById("tz_field").textContent = tz_str;
+        document.getElementById("date_field").textContent = date_str;
+        document.getElementById("time_field").textContent = time_str;
+    </script>
+</body>
+
+</html>
