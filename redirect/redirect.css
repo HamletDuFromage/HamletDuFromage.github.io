@@ -1,41 +1,67 @@
-h2, h3 {
-    text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: teal;
     color: white;
     font-family: sans-serif;
-    padding: 1.5em;
-    max-width: 600px;
-    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    width: 100%;
+    max-width: 560px;
+    padding: 2em 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+#status_field {
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.01em;
 }
 
 #result_field {
-    display: block;
     width: 100%;
-    box-sizing: border-box;
-    height: 6em;
-    font-size: 0.85em;
+    height: 7em;
+    font-size: 0.78em;
     font-family: monospace;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.18);
     color: white;
-    border: 1px solid rgba(255,255,255,0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 6px;
-    padding: 0.5em;
+    padding: 0.6em 0.8em;
     resize: none;
     word-break: break-all;
 }
 
 #copy_btn {
-    display: block;
-    margin: 1em auto;
-    padding: 0.6em 2.5em;
-    font-size: 1.3em;
+    align-self: flex-start;
+    padding: 0.45em 1.8em;
+    font-size: 0.95em;
+    font-family: sans-serif;
     cursor: pointer;
-    border-radius: 8px;
-    border: none;
-    background: white;
-    color: teal;
-    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: background 0.15s;
+}
+
+#copy_btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+#instructions_field {
+    font-size: 0.78em;
+    opacity: 0.7;
+    line-height: 1.5;
 }

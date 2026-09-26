@@ -10,30 +10,32 @@
 </head>
 
 <body>
-    <h3 id="status_field"></h3>
-    <h2 id="instructions_field"></h2>
-    <textarea id="result_field" readonly onclick="this.select()"></textarea>
-    <button id="copy_btn" onclick="copyResult()">📋 Copy</button>
+    <div id="container">
+        <p id="status_field"></p>
+        <textarea id="result_field" readonly onclick="this.select()"></textarea>
+        <button id="copy_btn" onclick="copyResult()">Copy</button>
+        <p id="instructions_field"></p>
+    </div>
 
     <script>
         const params = new URL(window.location.toLocaleString()).searchParams;
         const redirectResult = params.get("redirectResult");
 
         if (redirectResult) {
-            document.getElementById("status_field").textContent = "✅ PayPal payment completed";
-            document.getElementById("instructions_field").innerHTML = "Copy the string below, then go back to Telegram and tap <b>✅ Complete payment</b>.";
+            document.getElementById("status_field").textContent = "Payment authorised";
             document.getElementById("result_field").value = redirectResult;
+            document.getElementById("instructions_field").textContent = "Copy the string above, then go back to Telegram and tap Complete payment.";
         } else {
-            document.getElementById("status_field").textContent = "❌ No redirect result found";
-            document.getElementById("instructions_field").textContent = "Make sure you arrived here from the PayPal payment flow.";
+            document.getElementById("status_field").textContent = "No authorisation data found.";
+            document.getElementById("instructions_field").textContent = "Make sure you arrived here from the payment flow.";
             document.getElementById("copy_btn").style.display = "none";
             document.getElementById("result_field").style.display = "none";
         }
 
         function copyResult() {
             navigator.clipboard.writeText(redirectResult).then(() => {
-                document.getElementById("copy_btn").textContent = "✅ Copied!";
-                setTimeout(() => document.getElementById("copy_btn").textContent = "📋 Copy", 2000);
+                document.getElementById("copy_btn").textContent = "Copied";
+                setTimeout(() => document.getElementById("copy_btn").textContent = "Copy", 2000);
             });
         }
     </script>
