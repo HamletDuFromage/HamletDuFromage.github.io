@@ -1,0 +1,41 @@
+h2, h3 {
+    text-align: center;
+}
+
+body {
+    background-color: teal;
+    color: white;
+    font-family: sans-serif;
+    padding: 1.5em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#result_field {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    height: 6em;
+    font-size: 0.85em;
+    font-family: monospace;
+    background: rgba(0,0,0,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 6px;
+    padding: 0.5em;
+    resize: none;
+    word-break: break-all;
+}
+
+#copy_btn {
+    display: block;
+    margin: 1em auto;
+    padding: 0.6em 2.5em;
+    font-size: 1.3em;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: teal;
+    font-weight: bold;
+}
